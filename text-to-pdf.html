@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Text in PDF umwandeln – QuickTools</title>
+
+    <meta
+        name="description"
+        content="Erstelle kostenlos eine PDF aus deinem Text mit QuickTools."
+    >
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #111827;
+        }
+
+        header {
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 20px;
+        }
+
+        nav {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            text-decoration: none;
+            color: #111827;
+        }
+
+        .logo span {
+            color: #2563eb;
+        }
+
+        main {
+            max-width: 850px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+
+        .back {
+            color: #2563eb;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        .box {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 18px;
+            padding: 35px;
+        }
+
+        h1 {
+            font-size: 38px;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .description {
+            color: #6b7280;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            border: 1px solid #cbd5e1;
+            border-radius: 9px;
+            padding: 12px;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        textarea {
+            min-height: 350px;
+            resize: vertical;
+            line-height: 1.6;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        button {
+            width: 100%;
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 9px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        button:disabled {
+            background: #94a3b8;
+            cursor: not-allowed;
+        }
+
+        .privacy {
+            margin-top: 25px;
+            color: #6b7280;
+            font-size: 14px;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #6b7280;
+        }
+
+        @media (max-width: 600px) {
+
+            main {
+                margin: 30px auto;
+            }
+
+            .box {
+                padding: 25px 18px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            .options {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <nav>
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+            Quick<span>Tools</span>
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<main>
+
+    <a
+        href="index.html"
+        class="back"
+    >
+        ← Zurück zu QuickTools
+    </a>
+
+
+    <div class="box">
+
+        <h1>
+            Text in PDF umwandeln
+        </h1>
+
+
+        <p class="description">
+
+            Schreibe oder füge deinen Text ein
+            und erstelle daraus kostenlos eine PDF-Datei.
+
+        </p>
+
+
+        <div class="form-group">
+
+            <label for="title">
+                Titel
+            </label>
+
+            <input
+                type="text"
+                id="title"
+                placeholder="Mein Dokument"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="text">
+                Dein Text
+            </label>
+
+            <textarea
+                id="text"
+                placeholder="Schreibe oder füge hier deinen Text ein..."
+            ></textarea>
+
+        </div>
+
+
+        <div class="options">
+
+            <div class="form-group">
+
+                <label for="fontSize">
+                    Schriftgröße
+                </label>
+
+                <select id="fontSize">
+
+                    <option value="10">
+                        Klein
+                    </option>
+
+                    <option
+                        value="12"
+                        selected
+                    >
+                        Normal
+                    </option>
+
+                    <option value="14">
+                        Groß
+                    </option>
+
+                    <option value="18">
+                        Sehr groß
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="fontStyle">
+                    Schriftart
+                </label>
+
+                <select id="fontStyle">
+
+                    <option value="helvetica">
+                        Standard
+                    </option>
+
+                    <option value="times">
+                        Times
+                    </option>
+
+                    <option value="courier">
+                        Courier
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <button
+            id="createButton"
+            onclick="createPDF()"
+        >
+            PDF erstellen
+        </button>
+
+
+        <p class="privacy">
+
+            🔒 Dein Text wird direkt in deinem Browser
+            verarbeitet und nicht auf unseren Server hochgeladen.
+
+        </p>
+
+    </div>
+
+</main>
+
+
+
+<footer>
+
+    © 2026 QuickTools
+
+</footer>
+
+
+
+<!-- jsPDF -->
+
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+></script>
+
+
+
+<script>
+
+async function createPDF() {
+
+    const title =
+        document.getElementById("title").value.trim();
+
+
+    const text =
+        document.getElementById("text").value.trim();
+
+
+    const fontSize =
+        Number(
+            document.getElementById("fontSize").value
+        );
+
+
+    const fontStyle =
+        document.getElementById("fontStyle").value;
+
+
+    const button =
+        document.getElementById("createButton");
+
+
+    /*
+     * Prüfen, ob Text vorhanden ist.
+     */
+
+    if (!text) {
+
+        alert(
+            "Bitte gib zuerst einen Text ein."
+        );
+
+        return;
+    }
+
+
+    button.disabled = true;
+
+    button.textContent =
+        "PDF wird erstellt...";
+
+
+    try {
+
+        const {
+            jsPDF
+        } = window.jspdf;
+
+
+        /*
+         * A4 PDF erstellen.
+         */
+
+        const pdf =
+            new jsPDF({
+                orientation: "portrait",
+                unit: "mm",
+                format: "a4"
+            });
+
+
+        /*
+         * Seitenabstände.
+         */
+
+        const margin =
+            20;
+
+
+        const pageWidth =
+            pdf.internal.pageSize.getWidth();
+
+
+        const pageHeight =
+            pdf.internal.pageSize.getHeight();
+
+
+        const usableWidth =
+            pageWidth -
+            margin * 2;
+
+
+        /*
+         * Schriftart einstellen.
+         */
+
+        pdf.setFont(
+            fontStyle,
+            "normal"
+        );
+
+
+        /*
+         * Titel hinzufügen.
+         */
+
+        if (title) {
+
+            pdf.setFontSize(20);
+
+            pdf.setFont(
+                fontStyle,
+                "bold"
+            );
+
+
+            pdf.text(
+                title,
+                margin,
+                margin
+            );
+
+
+            pdf.setFont(
+                fontStyle,
+                "normal"
+            );
+
+        }
+
+
+        /*
+         * Textgröße einstellen.
+         */
+
+        pdf.setFontSize(
+            fontSize
+        );
+
+
+        /*
+         * Startposition des Textes.
+         */
+
+        let y =
+            title
+                ? margin + 15
+                : margin;
+
+
+        /*
+         * Text in Zeilen aufteilen.
+         */
+
+        const lines =
+            pdf.splitTextToSize(
+                text,
+                usableWidth
+            );
+
+
+        /*
+         * Zeilenhöhe berechnen.
+         */
+
+        const lineHeight =
+            fontSize * 0.5;
+
+
+        /*
+         * Text schreiben.
+         */
+
+        for (
+            let i = 0;
+            i < lines.length;
+            i++
+        ) {
+
+            /*
+             * Neue Seite erstellen,
+             * wenn die aktuelle Seite voll ist.
+             */
+
+            if (
+                y >
+                pageHeight - margin
+            ) {
+
+                pdf.addPage();
+
+                y =
+                    margin;
+
+            }
+
+
+            pdf.text(
+                lines[i],
+                margin,
+                y
+            );
+
+
+            y +=
+                lineHeight;
+
+        }
+
+
+        /*
+         * PDF herunterladen.
+         */
+
+        const filename =
+            title
+                ? cleanFilename(title) + ".pdf"
+                : "quicktools-document.pdf";
+
+
+        pdf.save(filename);
+
+
+        button.disabled = false;
+
+        button.textContent =
+            "PDF erstellen";
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert(
+            "Beim Erstellen der PDF ist ein Fehler aufgetreten."
+        );
+
+
+        button.disabled = false;
+
+        button.textContent =
+            "PDF erstellen";
+
+    }
+
+}
+
+
+
+/*
+ * Dateinamen bereinigen.
+ */
+
+function cleanFilename(name) {
+
+    return name
+        .replace(
+            /[<>:"/\\|?*]/g,
+            ""
+        )
+        .trim()
+        .substring(0, 80);
+
+}
+
+</script>
+
+
+</body>
+
+</html>
