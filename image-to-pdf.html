@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Bild in PDF umwandeln – QuickTools</title>
+
+    <meta
+        name="description"
+        content="Wandle Bilder kostenlos in PDF-Dateien um. Mehrere Bilder können zu einer PDF zusammengefügt werden."
+    >
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #111827;
+        }
+
+        header {
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 20px;
+        }
+
+        nav {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            text-decoration: none;
+            color: #111827;
+        }
+
+        .logo span {
+            color: #2563eb;
+        }
+
+        main {
+            max-width: 850px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+
+        .back {
+            color: #2563eb;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        .box {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 18px;
+            padding: 35px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .description {
+            color: #6b7280;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .upload {
+            border: 2px dashed #cbd5e1;
+            border-radius: 14px;
+            padding: 40px 20px;
+            margin-bottom: 25px;
+        }
+
+        input[type="file"] {
+            margin-top: 15px;
+            max-width: 100%;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 13px 24px;
+            border-radius: 9px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        button:disabled {
+            background: #94a3b8;
+            cursor: not-allowed;
+        }
+
+        #result {
+            display: none;
+            margin-top: 30px;
+            padding: 25px;
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+
+        .download {
+            display: inline-block;
+            background: #16a34a;
+            color: white;
+            padding: 13px 24px;
+            border-radius: 9px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .download:hover {
+            background: #15803d;
+        }
+
+        .file-list {
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .file-item {
+            background: #f8fafc;
+            padding: 12px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .info {
+            color: #6b7280;
+            margin-top: 15px;
+            line-height: 1.5;
+        }
+
+        .privacy {
+            margin-top: 25px;
+            color: #6b7280;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #6b7280;
+        }
+
+        @media (max-width: 600px) {
+
+            main {
+                margin: 30px auto;
+            }
+
+            .box {
+                padding: 25px 18px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <nav>
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+            Quick<span>Tools</span>
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<main>
+
+    <a
+        href="index.html"
+        class="back"
+    >
+        ← Zurück zu QuickTools
+    </a>
+
+
+    <div class="box">
+
+        <h1>
+            Bild in PDF umwandeln
+        </h1>
+
+
+        <p class="description">
+
+            Wandle ein oder mehrere Bilder kostenlos
+            in eine PDF-Datei um.
+
+        </p>
+
+
+        <div class="upload">
+
+            <strong>
+                Bilder auswählen
+            </strong>
+
+            <br>
+
+            <input
+                type="file"
+                id="fileInput"
+                accept="image/jpeg,image/png,image/webp"
+                multiple
+            >
+
+        </div>
+
+
+        <div
+            id="fileList"
+            class="file-list"
+        ></div>
+
+
+        <button
+            id="convertButton"
+            onclick="createPDF()"
+        >
+            PDF erstellen
+        </button>
+
+
+        <div id="result">
+
+            <h2>
+                PDF erstellt! 🎉
+            </h2>
+
+
+            <p class="info">
+                Deine Bilder wurden erfolgreich
+                in eine PDF-Datei umgewandelt.
+            </p>
+
+
+            <a
+                id="download"
+                class="download"
+                download="quicktools-images.pdf"
+            >
+                PDF herunterladen
+            </a>
+
+        </div>
+
+
+        <p class="privacy">
+
+            🔒 Deine Bilder werden direkt in deinem Browser
+            verarbeitet und nicht auf unseren Server hochgeladen.
+
+        </p>
+
+    </div>
+
+</main>
+
+
+
+<footer>
+
+    © 2026 QuickTools
+
+</footer>
+
+
+
+<!-- jsPDF -->
+
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+></script>
+
+
+
+<script>
+
+const fileInput =
+    document.getElementById("fileInput");
+
+
+const fileList =
+    document.getElementById("fileList");
+
+
+fileInput.addEventListener(
+    "change",
+    function() {
+
+        fileList.innerHTML = "";
+
+        const files =
+            Array.from(this.files);
+
+
+        files.forEach(
+            function(file, index) {
+
+                const item =
+                    document.createElement("div");
+
+                item.className =
+                    "file-item";
+
+                item.textContent =
+                    (index + 1) +
+                    ". " +
+                    file.name;
+
+                fileList.appendChild(item);
+
+            }
+        );
+
+    }
+);
+
+
+
+async function createPDF() {
+
+    const files =
+        Array.from(fileInput.files);
+
+
+    if (files.length === 0) {
+
+        alert(
+            "Bitte wähle mindestens ein Bild aus."
+        );
+
+        return;
+    }
+
+
+    const button =
+        document.getElementById("convertButton");
+
+
+    button.disabled = true;
+
+    button.textContent =
+        "PDF wird erstellt...";
+
+
+    try {
+
+        const {
+            jsPDF
+        } = window.jspdf;
+
+
+        let pdf = null;
+
+
+        for (
+            let i = 0;
+            i < files.length;
+            i++
+        ) {
+
+            const file =
+                files[i];
+
+
+            const imageData =
+                await readFile(file);
+
+
+            const img =
+                await loadImage(imageData);
+
+
+            /*
+             * Bildgröße bestimmen.
+             */
+
+            const width =
+                img.naturalWidth;
+
+            const height =
+                img.naturalHeight;
+
+
+            /*
+             * Seitenformat berechnen.
+             * Wir verwenden A4 und passen das Bild
+             * proportional an.
+             */
+
+            const pageWidth =
+                210;
+
+            const pageHeight =
+                297;
+
+            const margin =
+                10;
+
+
+            const maxWidth =
+                pageWidth -
+                margin * 2;
+
+
+            const maxHeight =
+                pageHeight -
+                margin * 2;
+
+
+            const ratio =
+                Math.min(
+                    maxWidth / width,
+                    maxHeight / height
+                );
+
+
+            const finalWidth =
+                width * ratio;
+
+
+            const finalHeight =
+                height * ratio;
+
+
+            const x =
+                (pageWidth - finalWidth) / 2;
+
+
+            const y =
+                (pageHeight - finalHeight) / 2;
+
+
+            /*
+             * PDF erstellen.
+             */
+
+            if (i === 0) {
+
+                pdf = new jsPDF({
+                    orientation:
+                        finalWidth > finalHeight
+                            ? "landscape"
+                            : "portrait",
+
+                    unit: "mm",
+
+                    format: "a4"
+                });
+
+            } else {
+
+                pdf.addPage(
+                    "a4",
+                    finalWidth > finalHeight
+                        ? "landscape"
+                        : "portrait"
+                );
+
+            }
+
+
+            pdf.addImage(
+                imageData,
+                getImageFormat(file.type),
+                x,
+                y,
+                finalWidth,
+                finalHeight
+            );
+
+        }
+
+
+        /*
+         * PDF als Blob erstellen.
+         */
+
+        const pdfBlob =
+            pdf.output("blob");
+
+
+        const url =
+            URL.createObjectURL(pdfBlob);
+
+
+        /*
+         * Download-Link erstellen.
+         */
+
+        const download =
+            document.getElementById("download");
+
+
+        download.href =
+            url;
+
+
+        document.getElementById("result")
+            .style.display =
+            "block";
+
+
+        button.disabled = false;
+
+        button.textContent =
+            "PDF erstellen";
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert(
+            "Beim Erstellen der PDF ist ein Fehler aufgetreten."
+        );
+
+
+        button.disabled = false;
+
+        button.textContent =
+            "PDF erstellen";
+    }
+
+}
+
+
+
+/*
+ * Datei als Data URL lesen.
+ */
+
+function readFile(file) {
+
+    return new Promise(
+        function(resolve, reject) {
+
+            const reader =
+                new FileReader();
+
+
+            reader.onload =
+                function() {
+
+                    resolve(
+                        reader.result
+                    );
+
+                };
+
+
+            reader.onerror =
+                reject;
+
+
+            reader.readAsDataURL(file);
+
+        }
+    );
+
+}
+
+
+
+/*
+ * Bild laden.
+ */
+
+function loadImage(src) {
+
+    return new Promise(
+        function(resolve, reject) {
+
+            const img =
+                new Image();
+
+
+            img.onload =
+                function() {
+
+                    resolve(img);
+
+                };
+
+
+            img.onerror =
+                reject;
+
+
+            img.src =
+                src;
+
+        }
+    );
+
+}
+
+
+
+/*
+ * Dateiformat bestimmen.
+ */
+
+function getImageFormat(type) {
+
+    if (type === "image/png") {
+
+        return "PNG";
+
+    }
+
+    if (type === "image/webp") {
+
+        return "WEBP";
+
+    }
+
+    return "JPEG";
+}
+
+</script>
+
+
+</body>
+
+</html>
