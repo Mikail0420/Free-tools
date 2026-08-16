@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Dokument in PDF umwandeln – QuickTools</title>
+
+    <meta
+        name="description"
+        content="Wandle Word-Dokumente kostenlos in PDF-Dateien um."
+    >
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #111827;
+        }
+
+        header {
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 20px;
+        }
+
+        nav {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            text-decoration: none;
+            color: #111827;
+        }
+
+        .logo span {
+            color: #2563eb;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+
+        .back {
+            color: #2563eb;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        .box {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 18px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .description {
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .upload {
+            border: 2px dashed #cbd5e1;
+            border-radius: 14px;
+            padding: 40px 20px;
+            margin-bottom: 25px;
+        }
+
+        .upload-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        input[type="file"] {
+            margin-top: 20px;
+            max-width: 100%;
+        }
+
+        .file-name {
+            margin-top: 15px;
+            color: #374151;
+            font-weight: bold;
+        }
+
+        button {
+            width: 100%;
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 9px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        button:disabled {
+            background: #94a3b8;
+            cursor: not-allowed;
+        }
+
+        .result {
+            display: none;
+            margin-top: 25px;
+            padding: 25px;
+            background: #f0fdf4;
+            border-radius: 12px;
+        }
+
+        .download {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 13px 24px;
+            background: #16a34a;
+            color: white;
+            text-decoration: none;
+            border-radius: 9px;
+            font-weight: bold;
+        }
+
+        .error {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #fef2f2;
+            color: #b91c1c;
+            border-radius: 9px;
+        }
+
+        .privacy {
+            margin-top: 25px;
+            color: #6b7280;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #6b7280;
+        }
+
+        @media (max-width: 600px) {
+
+            .box {
+                padding: 25px 18px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <nav>
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+            Quick<span>Tools</span>
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<main>
+
+    <a
+        href="index.html"
+        class="back"
+    >
+        ← Zurück zu QuickTools
+    </a>
+
+
+    <div class="box">
+
+        <h1>
+            Dokument in PDF umwandeln
+        </h1>
+
+
+        <p class="description">
+
+            Lade dein Word-Dokument hoch und
+            wandle es direkt in eine PDF-Datei um.
+
+        </p>
+
+
+        <div class="upload">
+
+            <div class="upload-icon">
+                📄
+            </div>
+
+            <strong>
+                Word-Datei auswählen
+            </strong>
+
+            <br>
+
+            <input
+                type="file"
+                id="fileInput"
+                accept=".docx"
+            >
+
+            <div
+                id="fileName"
+                class="file-name"
+            ></div>
+
+        </div>
+
+
+        <button
+            id="convertButton"
+            onclick="convertFile()"
+        >
+            In PDF umwandeln
+        </button>
+
+
+        <div
+            id="result"
+            class="result"
+        >
+
+            <strong>
+                ✅ PDF wurde erstellt!
+            </strong>
+
+            <br>
+
+            <a
+                id="download"
+                class="download"
+                target="_blank"
+            >
+                PDF herunterladen
+            </a>
+
+        </div>
+
+
+        <div
+            id="error"
+            class="error"
+        ></div>
+
+
+        <p class="privacy">
+
+            🔒 Deine Datei wird zur Konvertierung
+            sicher an unseren Konvertierungsdienst übertragen.
+            Sie wird nicht dauerhaft auf QuickTools gespeichert.
+
+        </p>
+
+    </div>
+
+</main>
+
+
+
+<footer>
+
+    © 2026 QuickTools
+
+</footer>
+
+
+
+<script>
+
+const WORKER_URL =
+    "https://quicktools-api.mikail-ba.workers.dev";
+
+
+const fileInput =
+    document.getElementById("fileInput");
+
+
+const fileName =
+    document.getElementById("fileName");
+
+
+fileInput.addEventListener(
+    "change",
+    function() {
+
+        if (this.files.length > 0) {
+
+            fileName.textContent =
+                "Ausgewählt: " +
+                this.files[0].name;
+
+        } else {
+
+            fileName.textContent =
+                "";
+
+        }
+
+    }
+);
+
+
+
+async function convertFile() {
+
+    const file =
+        fileInput.files[0];
+
+
+    if (!file) {
+
+        showError(
+            "Bitte wähle zuerst eine Word-Datei aus."
+        );
+
+        return;
+    }
+
+
+    if (
+        !file.name
+            .toLowerCase()
+            .endsWith(".docx")
+    ) {
+
+        showError(
+            "Bitte wähle eine DOCX-Datei aus."
+        );
+
+        return;
+    }
+
+
+    const button =
+        document.getElementById(
+            "convertButton"
+        );
+
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const error =
+        document.getElementById(
+            "error"
+        );
+
+
+    error.style.display =
+        "none";
+
+
+    result.style.display =
+        "none";
+
+
+    button.disabled =
+        true;
+
+
+    button.textContent =
+        "Dokument wird umgewandelt...";
+
+
+    try {
+
+        const formData =
+            new FormData();
+
+
+        formData.append(
+            "file",
+            file
+        );
+
+
+        const response =
+            await fetch(
+                WORKER_URL,
+                {
+                    method: "POST",
+                    body: formData
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (
+            !response.ok ||
+            !data.success
+        ) {
+
+            throw new Error(
+                data.error ||
+                "Die Konvertierung ist fehlgeschlagen."
+            );
+
+        }
+
+
+        document.getElementById(
+            "download"
+        ).href =
+            data.downloadUrl;
+
+
+        document.getElementById(
+            "download"
+        ).download =
+            data.fileName ||
+            "quicktools-document.pdf";
+
+
+        result.style.display =
+            "block";
+
+
+        button.disabled =
+            false;
+
+
+        button.textContent =
+            "In PDF umwandeln";
+
+
+    } catch (err) {
+
+        console.error(err);
+
+
+        showError(
+            err.message ||
+            "Es ist ein Fehler aufgetreten."
+        );
+
+
+        button.disabled =
+            false;
+
+
+        button.textContent =
+            "In PDF umwandeln";
+
+    }
+
+}
+
+
+
+function showError(message) {
+
+    const error =
+        document.getElementById(
+            "error"
+        );
+
+
+    error.textContent =
+        "❌ " + message;
+
+
+    error.style.display =
+        "block";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
