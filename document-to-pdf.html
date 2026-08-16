@@ -10,11 +10,11 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Dokument in PDF umwandeln – QuickTools</title>
+    <title>Datei in PDF umwandeln – QuickTools</title>
 
     <meta
         name="description"
-        content="Wandle Word-Dokumente kostenlos in PDF-Dateien um."
+        content="Dateien schnell und kostenlos in PDF umwandeln."
     >
 
     <style>
@@ -26,158 +26,719 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: #f5f7fb;
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Arial,
+                sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f8fafc 0%,
+                    #eef4ff 100%
+                );
+
             color: #111827;
+            min-height: 100vh;
         }
+
+
+        /* HEADER */
 
         header {
-            background: white;
-            border-bottom: 1px solid #e5e7eb;
-            padding: 20px;
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(12px);
+
+            border-bottom:
+                1px solid #e5e7eb;
+
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
+
 
         nav {
-            max-width: 900px;
+            max-width: 1100px;
             margin: auto;
+            padding: 18px 22px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
+
         .logo {
-            font-size: 24px;
-            font-weight: 800;
             text-decoration: none;
             color: #111827;
+
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: -0.8px;
         }
+
 
         .logo span {
             color: #2563eb;
         }
 
-        main {
-            max-width: 800px;
-            margin: 60px auto;
-            padding: 20px;
+
+        .home-button {
+            text-decoration: none;
+
+            color: #374151;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            padding: 9px 14px;
+
+            border-radius: 8px;
+
+            transition: 0.2s;
         }
 
+
+        .home-button:hover {
+            background: #f1f5f9;
+        }
+
+
+
+        /* MAIN */
+
+        main {
+            max-width: 850px;
+            margin: auto;
+
+            padding:
+                55px 20px 80px;
+        }
+
+
         .back {
+            display: inline-flex;
+
+            align-items: center;
+            gap: 7px;
+
             color: #2563eb;
+
             text-decoration: none;
-            display: inline-block;
+
+            font-size: 14px;
+            font-weight: 600;
+
             margin-bottom: 25px;
         }
 
-        .box {
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 18px;
-            padding: 40px;
-            text-align: center;
+
+        .back:hover {
+            text-decoration: underline;
         }
 
+
+
+        /* TITLE */
+
+        .title {
+            text-align: center;
+
+            margin-bottom: 35px;
+        }
+
+
+        .title-icon {
+            width: 64px;
+            height: 64px;
+
+            margin:
+                0 auto 18px;
+
+            border-radius: 18px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #dbeafe;
+
+            font-size: 31px;
+        }
+
+
         h1 {
-            font-size: 38px;
+            font-size: 42px;
+
+            letter-spacing: -1.5px;
+
             margin-bottom: 12px;
         }
 
-        .description {
-            color: #6b7280;
+
+        .subtitle {
+            max-width: 600px;
+
+            margin: auto;
+
+            color: #64748b;
+
+            font-size: 17px;
+
             line-height: 1.6;
-            margin-bottom: 30px;
         }
 
-        .upload {
-            border: 2px dashed #cbd5e1;
-            border-radius: 14px;
-            padding: 40px 20px;
-            margin-bottom: 25px;
+
+
+        /* TOOL CARD */
+
+        .tool-card {
+
+            background: rgba(255,255,255,0.96);
+
+            border:
+                1px solid #e2e8f0;
+
+            border-radius: 22px;
+
+            padding: 32px;
+
+            box-shadow:
+                0 20px 50px
+                rgba(15,23,42,0.08);
         }
+
+
+
+        /* DROPZONE */
+
+        .dropzone {
+
+            border:
+                2px dashed #bfdbfe;
+
+            background:
+                #f8fbff;
+
+            border-radius: 17px;
+
+            padding: 55px 25px;
+
+            text-align: center;
+
+            cursor: pointer;
+
+            transition:
+                border-color .2s,
+                background .2s,
+                transform .2s;
+        }
+
+
+        .dropzone:hover {
+
+            border-color:
+                #2563eb;
+
+            background:
+                #eff6ff;
+
+            transform:
+                translateY(-1px);
+        }
+
+
+        .dropzone.dragover {
+
+            border-color:
+                #2563eb;
+
+            background:
+                #dbeafe;
+
+            transform:
+                scale(1.01);
+        }
+
 
         .upload-icon {
-            font-size: 50px;
-            margin-bottom: 15px;
+
+            width: 72px;
+            height: 72px;
+
+            margin:
+                0 auto 18px;
+
+            border-radius: 20px;
+
+            background:
+                #dbeafe;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 35px;
         }
 
-        input[type="file"] {
-            margin-top: 20px;
-            max-width: 100%;
+
+        .dropzone h2 {
+
+            font-size: 20px;
+
+            margin-bottom: 8px;
         }
+
+
+        .dropzone p {
+
+            color: #64748b;
+
+            margin-bottom: 22px;
+        }
+
+
+        .choose-button {
+
+            display: inline-block;
+
+            background:
+                #2563eb;
+
+            color: white;
+
+            padding:
+                12px 22px;
+
+            border-radius: 10px;
+
+            font-weight: 700;
+
+            box-shadow:
+                0 5px 15px
+                rgba(37,99,235,.22);
+        }
+
+
+        .choose-button:hover {
+            background:
+                #1d4ed8;
+        }
+
+
+        .formats {
+
+            margin-top: 22px;
+
+            font-size: 13px;
+
+            color: #94a3b8;
+
+            line-height: 1.6;
+        }
+
+
+        #fileInput {
+            display: none;
+        }
+
+
+
+        /* FILE */
+
+        .selected-file {
+
+            display: none;
+
+            margin-top: 20px;
+
+            padding: 16px;
+
+            background:
+                #f8fafc;
+
+            border:
+                1px solid #e2e8f0;
+
+            border-radius: 12px;
+
+            align-items: center;
+
+            gap: 13px;
+        }
+
+
+        .file-icon {
+
+            width: 44px;
+            height: 44px;
+
+            border-radius: 10px;
+
+            background: #dbeafe;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 21px;
+        }
+
+
+        .file-info {
+            text-align: left;
+            flex: 1;
+            min-width: 0;
+        }
+
 
         .file-name {
-            margin-top: 15px;
-            color: #374151;
-            font-weight: bold;
+
+            font-weight: 700;
+
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+
+            white-space: nowrap;
         }
 
-        button {
+
+        .file-size {
+
+            color: #64748b;
+
+            font-size: 13px;
+
+            margin-top: 3px;
+        }
+
+
+
+        /* CONVERT BUTTON */
+
+        .convert-button {
+
             width: 100%;
-            background: #2563eb;
-            color: white;
+
+            margin-top: 22px;
+
             border: none;
-            padding: 14px 24px;
-            border-radius: 9px;
+
+            background:
+                #111827;
+
+            color: white;
+
+            padding: 16px;
+
+            border-radius: 11px;
+
             font-size: 16px;
-            font-weight: bold;
+
+            font-weight: 700;
+
             cursor: pointer;
+
+            transition: .2s;
         }
 
-        button:hover {
-            background: #1d4ed8;
+
+        .convert-button:hover:not(:disabled) {
+
+            background:
+                #2563eb;
+
+            transform:
+                translateY(-1px);
         }
 
-        button:disabled {
-            background: #94a3b8;
+
+        .convert-button:disabled {
+
+            background:
+                #94a3b8;
+
             cursor: not-allowed;
         }
 
-        .result {
+
+
+        /* STATUS */
+
+        .status {
+
             display: none;
-            margin-top: 25px;
-            padding: 25px;
-            background: #f0fdf4;
+
+            margin-top: 22px;
+
+            padding: 18px;
+
             border-radius: 12px;
+
+            background:
+                #f8fafc;
+
+            border:
+                1px solid #e2e8f0;
+
+            text-align: center;
         }
 
-        .download {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 13px 24px;
-            background: #16a34a;
-            color: white;
-            text-decoration: none;
-            border-radius: 9px;
-            font-weight: bold;
+
+        .spinner {
+
+            width: 28px;
+            height: 28px;
+
+            border:
+                3px solid #dbeafe;
+
+            border-top-color:
+                #2563eb;
+
+            border-radius: 50%;
+
+            animation:
+                spin .8s linear infinite;
+
+            margin:
+                0 auto 12px;
         }
+
+
+        @keyframes spin {
+
+            to {
+                transform:
+                    rotate(360deg);
+            }
+
+        }
+
+
+        .status-text {
+
+            font-weight: 600;
+
+            color: #374151;
+        }
+
+
+
+        /* SUCCESS */
+
+        .result {
+
+            display: none;
+
+            margin-top: 22px;
+
+            padding: 25px;
+
+            border-radius: 14px;
+
+            background:
+                #f0fdf4;
+
+            border:
+                1px solid #bbf7d0;
+
+            text-align: center;
+        }
+
+
+        .success-icon {
+
+            font-size: 34px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .result h3 {
+
+            color: #166534;
+
+            margin-bottom: 7px;
+        }
+
+
+        .result p {
+
+            color: #4b5563;
+
+            font-size: 14px;
+
+            margin-bottom: 17px;
+        }
+
+
+        .download-button {
+
+            display: inline-block;
+
+            background:
+                #16a34a;
+
+            color: white;
+
+            text-decoration: none;
+
+            padding:
+                12px 22px;
+
+            border-radius: 9px;
+
+            font-weight: 700;
+
+            transition: .2s;
+        }
+
+
+        .download-button:hover {
+
+            background:
+                #15803d;
+
+            transform:
+                translateY(-1px);
+        }
+
+
+
+        /* ERROR */
 
         .error {
-            display: none;
-            margin-top: 20px;
-            padding: 15px;
-            background: #fef2f2;
-            color: #b91c1c;
-            border-radius: 9px;
-        }
 
-        .privacy {
-            margin-top: 25px;
-            color: #6b7280;
+            display: none;
+
+            margin-top: 20px;
+
+            padding: 15px;
+
+            border-radius: 10px;
+
+            background:
+                #fef2f2;
+
+            border:
+                1px solid #fecaca;
+
+            color:
+                #b91c1c;
+
             font-size: 14px;
+
             line-height: 1.5;
         }
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: #6b7280;
+
+
+        /* INFO */
+
+        .info {
+
+            margin-top: 24px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap: 12px;
         }
 
-        @media (max-width: 600px) {
 
-            .box {
-                padding: 25px 18px;
+        .info-box {
+
+            background:
+                rgba(255,255,255,.7);
+
+            border:
+                1px solid #e2e8f0;
+
+            border-radius: 12px;
+
+            padding: 15px;
+
+            text-align: center;
+        }
+
+
+        .info-box strong {
+
+            display: block;
+
+            font-size: 14px;
+
+            margin-bottom: 5px;
+        }
+
+
+        .info-box span {
+
+            color: #64748b;
+
+            font-size: 12px;
+        }
+
+
+
+        /* FOOTER */
+
+        footer {
+
+            text-align: center;
+
+            padding:
+                30px 20px;
+
+            color:
+                #94a3b8;
+
+            font-size: 13px;
+        }
+
+
+
+        /* MOBILE */
+
+        @media (max-width: 650px) {
+
+            main {
+                padding-top: 35px;
             }
 
             h1 {
-                font-size: 30px;
+                font-size: 32px;
+            }
+
+            .subtitle {
+                font-size: 15px;
+            }
+
+            .tool-card {
+                padding: 18px;
+                border-radius: 17px;
+            }
+
+            .dropzone {
+                padding:
+                    40px 15px;
+            }
+
+            .info {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .home-button {
+                display: none;
             }
 
         }
@@ -185,6 +746,7 @@
     </style>
 
 </head>
+
 
 
 <body>
@@ -201,6 +763,14 @@
             Quick<span>Tools</span>
         </a>
 
+
+        <a
+            href="index.html"
+            class="home-button"
+        >
+            Alle Tools
+        </a>
+
     </nav>
 
 </header>
@@ -208,6 +778,7 @@
 
 
 <main>
+
 
     <a
         href="index.html"
@@ -217,53 +788,139 @@
     </a>
 
 
-    <div class="box">
+
+    <div class="title">
+
+        <div class="title-icon">
+            📄
+        </div>
+
 
         <h1>
-            Dokument in PDF umwandeln
+            Datei in PDF umwandeln
         </h1>
 
 
-        <p class="description">
+        <p class="subtitle">
 
-            Lade dein Word-Dokument hoch und
-            wandle es direkt in eine PDF-Datei um.
+            Wandle Dokumente und Bilder schnell
+            und einfach in eine PDF-Datei um.
 
         </p>
 
+    </div>
 
-        <div class="upload">
+
+
+    <div class="tool-card">
+
+
+        <div
+            class="dropzone"
+            id="dropzone"
+        >
 
             <div class="upload-icon">
-                📄
+                📁
             </div>
 
-            <strong>
-                Word-Datei auswählen
-            </strong>
 
-            <br>
+            <h2>
+                Datei hier ablegen
+            </h2>
+
+
+            <p>
+                oder eine Datei von deinem Gerät auswählen
+            </p>
+
+
+            <label
+                for="fileInput"
+                class="choose-button"
+            >
+                Datei auswählen
+            </label>
+
 
             <input
                 type="file"
                 id="fileInput"
-                accept=".docx"
+                accept=".docx,.doc,.rtf,.txt,.jpg,.jpeg,.png,.webp"
             >
 
-            <div
-                id="fileName"
-                class="file-name"
-            ></div>
+
+            <div class="formats">
+
+                DOCX · DOC · RTF · TXT ·
+                JPG · JPEG · PNG · WEBP
+
+                <br>
+
+                Maximale Dateigröße: 25 MB
+
+            </div>
 
         </div>
 
 
+
+        <div
+            id="selectedFile"
+            class="selected-file"
+        >
+
+            <div class="file-icon">
+                📄
+            </div>
+
+
+            <div class="file-info">
+
+                <div
+                    id="fileName"
+                    class="file-name"
+                ></div>
+
+
+                <div
+                    id="fileSize"
+                    class="file-size"
+                ></div>
+
+            </div>
+
+        </div>
+
+
+
         <button
             id="convertButton"
-            onclick="convertFile()"
+            class="convert-button"
+            disabled
         >
-            In PDF umwandeln
+            Datei auswählen
         </button>
+
+
+
+        <div
+            id="status"
+            class="status"
+        >
+
+            <div class="spinner"></div>
+
+
+            <div
+                id="statusText"
+                class="status-text"
+            >
+                Datei wird verarbeitet...
+            </div>
+
+        </div>
+
 
 
         <div
@@ -271,21 +928,32 @@
             class="result"
         >
 
-            <strong>
-                ✅ PDF wurde erstellt!
-            </strong>
+            <div class="success-icon">
+                ✅
+            </div>
 
-            <br>
+
+            <h3>
+                Deine PDF ist fertig!
+            </h3>
+
+
+            <p>
+                Die Konvertierung wurde erfolgreich abgeschlossen.
+            </p>
+
 
             <a
                 id="download"
-                class="download"
+                class="download-button"
                 target="_blank"
+                rel="noopener"
             >
                 PDF herunterladen
             </a>
 
         </div>
+
 
 
         <div
@@ -294,13 +962,47 @@
         ></div>
 
 
-        <p class="privacy">
+        <div class="info">
 
-            🔒 Deine Datei wird zur Konvertierung
-            sicher an unseren Konvertierungsdienst übertragen.
-            Sie wird nicht dauerhaft auf QuickTools gespeichert.
+            <div class="info-box">
 
-        </p>
+                <strong>
+                    ⚡ Schnell
+                </strong>
+
+                <span>
+                    Einfache Konvertierung
+                </span>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <strong>
+                    🔒 Sicher
+                </strong>
+
+                <span>
+                    Keine dauerhafte Speicherung
+                </span>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <strong>
+                    💻 Einfach
+                </strong>
+
+                <span>
+                    Direkt im Browser
+                </span>
+
+            </div>
+
+        </div>
 
     </div>
 
@@ -318,32 +1020,111 @@
 
 <script>
 
+
 const WORKER_URL =
     "https://quicktools-api.mikail-ba.workers.dev";
 
 
 const fileInput =
-    document.getElementById("fileInput");
+    document.getElementById(
+        "fileInput"
+    );
+
+
+const dropzone =
+    document.getElementById(
+        "dropzone"
+    );
+
+
+const selectedFile =
+    document.getElementById(
+        "selectedFile"
+    );
 
 
 const fileName =
-    document.getElementById("fileName");
+    document.getElementById(
+        "fileName"
+    );
 
+
+const fileSize =
+    document.getElementById(
+        "fileSize"
+    );
+
+
+const convertButton =
+    document.getElementById(
+        "convertButton"
+    );
+
+
+const status =
+    document.getElementById(
+        "status"
+    );
+
+
+const statusText =
+    document.getElementById(
+        "statusText"
+    );
+
+
+const result =
+    document.getElementById(
+        "result"
+    );
+
+
+const error =
+    document.getElementById(
+        "error"
+    );
+
+
+const download =
+    document.getElementById(
+        "download"
+    );
+
+
+
+let selected = null;
+
+
+
+const allowedExtensions = [
+
+    "docx",
+    "doc",
+    "rtf",
+    "txt",
+    "jpg",
+    "jpeg",
+    "png",
+    "webp"
+
+];
+
+
+
+/* DATEI AUSWÄHLEN */
 
 fileInput.addEventListener(
     "change",
     function() {
 
-        if (this.files.length > 0) {
+        if (
+            this.files &&
+            this.files.length
+        ) {
 
-            fileName.textContent =
-                "Ausgewählt: " +
-                this.files[0].name;
-
-        } else {
-
-            fileName.textContent =
-                "";
+            selectFile(
+                this.files[0]
+            );
 
         }
 
@@ -352,68 +1133,176 @@ fileInput.addEventListener(
 
 
 
-async function convertFile() {
+/* DRAG & DROP */
 
-    const file =
-        fileInput.files[0];
+dropzone.addEventListener(
+    "dragover",
+    function(event) {
 
+        event.preventDefault();
 
-    if (!file) {
-
-        showError(
-            "Bitte wähle zuerst eine Word-Datei aus."
+        dropzone.classList.add(
+            "dragover"
         );
 
-        return;
     }
+);
 
 
-    if (
-        !file.name
-            .toLowerCase()
-            .endsWith(".docx")
-    ) {
+dropzone.addEventListener(
+    "dragleave",
+    function() {
 
-        showError(
-            "Bitte wähle eine DOCX-Datei aus."
+        dropzone.classList.remove(
+            "dragover"
         );
 
-        return;
     }
+);
 
 
-    const button =
-        document.getElementById(
-            "convertButton"
+dropzone.addEventListener(
+    "drop",
+    function(event) {
+
+        event.preventDefault();
+
+        dropzone.classList.remove(
+            "dragover"
         );
 
 
-    const result =
-        document.getElementById(
-            "result"
-        );
+        const files =
+            event.dataTransfer.files;
 
 
-    const error =
-        document.getElementById(
-            "error"
-        );
+        if (files.length) {
 
+            selectFile(
+                files[0]
+            );
+
+        }
+
+    }
+);
+
+
+
+/* DATEI AUSWÄHLEN */
+
+function selectFile(file) {
 
     error.style.display =
         "none";
-
 
     result.style.display =
         "none";
 
 
-    button.disabled =
+    const extension =
+        file.name
+            .split(".")
+            .pop()
+            .toLowerCase();
+
+
+    if (
+        !allowedExtensions.includes(
+            extension
+        )
+    ) {
+
+        showError(
+            "Dieses Dateiformat wird nicht unterstützt."
+        );
+
+        return;
+
+    }
+
+
+    if (
+        file.size >
+        25 * 1024 * 1024
+    ) {
+
+        showError(
+            "Die Datei darf maximal 25 MB groß sein."
+        );
+
+        return;
+
+    }
+
+
+    selected =
+        file;
+
+
+    fileName.textContent =
+        file.name;
+
+
+    fileSize.textContent =
+        formatSize(
+            file.size
+        );
+
+
+    selectedFile.style.display =
+        "flex";
+
+
+    convertButton.disabled =
+        false;
+
+
+    convertButton.textContent =
+        "In PDF umwandeln";
+
+}
+
+
+
+/* KONVERTIEREN */
+
+convertButton.addEventListener(
+    "click",
+    convertFile
+);
+
+
+
+async function convertFile() {
+
+    if (!selected) {
+
+        return;
+
+    }
+
+
+    error.style.display =
+        "none";
+
+    result.style.display =
+        "none";
+
+    status.style.display =
+        "block";
+
+
+    convertButton.disabled =
         true;
 
 
-    button.textContent =
-        "Dokument wird umgewandelt...";
+    convertButton.textContent =
+        "Bitte warten...";
+
+
+    statusText.textContent =
+        "Datei wird hochgeladen...";
 
 
     try {
@@ -424,8 +1313,12 @@ async function convertFile() {
 
         formData.append(
             "file",
-            file
+            selected
         );
+
+
+        statusText.textContent =
+            "Datei wird konvertiert...";
 
 
         const response =
@@ -455,29 +1348,29 @@ async function convertFile() {
         }
 
 
-        document.getElementById(
-            "download"
-        ).href =
+        status.style.display =
+            "none";
+
+
+        download.href =
             data.downloadUrl;
 
 
-        document.getElementById(
-            "download"
-        ).download =
+        download.download =
             data.fileName ||
-            "quicktools-document.pdf";
+            "quicktools.pdf";
 
 
         result.style.display =
             "block";
 
 
-        button.disabled =
+        convertButton.disabled =
             false;
 
 
-        button.textContent =
-            "In PDF umwandeln";
+        convertButton.textContent =
+            "Noch eine Datei umwandeln";
 
 
     } catch (err) {
@@ -485,18 +1378,22 @@ async function convertFile() {
         console.error(err);
 
 
+        status.style.display =
+            "none";
+
+
         showError(
             err.message ||
-            "Es ist ein Fehler aufgetreten."
+            "Es ist ein unbekannter Fehler aufgetreten."
         );
 
 
-        button.disabled =
+        convertButton.disabled =
             false;
 
 
-        button.textContent =
-            "In PDF umwandeln";
+        convertButton.textContent =
+            "Erneut versuchen";
 
     }
 
@@ -504,22 +1401,48 @@ async function convertFile() {
 
 
 
+/* FEHLER */
+
 function showError(message) {
-
-    const error =
-        document.getElementById(
-            "error"
-        );
-
 
     error.textContent =
         "❌ " + message;
-
 
     error.style.display =
         "block";
 
 }
+
+
+
+/* DATEIGRÖSSE */
+
+function formatSize(bytes) {
+
+    if (
+        bytes <
+        1024 * 1024
+    ) {
+
+        return (
+            (bytes / 1024)
+                .toFixed(1) +
+            " KB"
+        );
+
+    }
+
+
+    return (
+        (bytes /
+            1024 /
+            1024)
+            .toFixed(2) +
+        " MB"
+    );
+
+}
+
 
 </script>
 
