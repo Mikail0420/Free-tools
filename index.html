@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>QuickTools – Kostenlose Online-Tools</title>
-    <meta name="description" content="Kostenlose und einfache Online-Tools für Bilder, Dateien und mehr.">
+
+    <meta
+        name="description"
+        content="Kostenlose und einfache Online-Tools für Bilder, Dateien und mehr."
+    >
 
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -21,7 +26,7 @@
         }
 
         header {
-            background: #ffffff;
+            background: white;
             border-bottom: 1px solid #e5e7eb;
             padding: 20px;
         }
@@ -30,8 +35,8 @@
             max-width: 1100px;
             margin: auto;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
         }
 
         .logo {
@@ -46,8 +51,8 @@
         .hero {
             max-width: 900px;
             margin: 80px auto 50px;
-            text-align: center;
             padding: 20px;
+            text-align: center;
         }
 
         .hero h1 {
@@ -58,29 +63,39 @@
         .hero p {
             font-size: 19px;
             color: #6b7280;
-            margin-bottom: 35px;
+            line-height: 1.6;
         }
 
         .tools {
             max-width: 1100px;
             margin: auto;
             padding: 20px;
+
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
             gap: 20px;
         }
 
         .tool-card {
             background: white;
+
             padding: 30px;
+
             border-radius: 16px;
+
             border: 1px solid #e5e7eb;
+
             transition: 0.2s;
         }
 
         .tool-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.08);
         }
 
         .tool-icon {
@@ -89,23 +104,31 @@
         }
 
         .tool-card h2 {
-            margin-bottom: 10px;
             font-size: 21px;
+            margin-bottom: 10px;
         }
 
         .tool-card p {
             color: #6b7280;
+
             line-height: 1.5;
+
             margin-bottom: 20px;
         }
 
         .button {
             display: inline-block;
+
             background: #2563eb;
+
             color: white;
+
             padding: 11px 18px;
+
             border-radius: 9px;
+
             text-decoration: none;
+
             font-weight: 600;
         }
 
@@ -115,102 +138,179 @@
 
         footer {
             text-align: center;
+
             padding: 60px 20px 30px;
+
             color: #6b7280;
         }
 
         @media (max-width: 600px) {
+
             .hero h1 {
                 font-size: 38px;
             }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
+
 <header>
+
     <nav>
-        <div class="logo">Quick<span>Tools</span></div>
+
+        <div class="logo">
+            Quick<span>Tools</span>
+        </div>
+
     </nav>
+
 </header>
 
+
+
 <section class="hero">
-    <h1>Simple tools.<br>Completely free.</h1>
+
+    <h1>
+        Simple tools.<br>
+        Completely free.
+    </h1>
 
     <p>
         Praktische Online-Tools, die schnell und einfach funktionieren.
         Keine komplizierte Software nötig.
     </p>
+
 </section>
+
+
 
 <section class="tools">
 
-    <!-- BILD KOMPRESSOR -->
-    <div class="tool-card">
-        <div class="tool-icon">🖼️</div>
 
-        <h2>Bild komprimieren</h2>
+    <!-- TOOL 1 -->
+
+    <div class="tool-card">
+
+        <div class="tool-icon">
+            🖼️
+        </div>
+
+        <h2>
+            Bild komprimieren
+        </h2>
 
         <p>
             Verkleinere deine Bilder schnell und einfach.
         </p>
 
-        <a href="compress.html" class="button">
+        <a
+            href="compress.html"
+            class="button"
+        >
             Jetzt testen
         </a>
+
     </div>
 
-    <!-- BILD KONVERTIEREN -->
-    <div class="tool-card">
-        <div class="tool-icon">🔄</div>
 
-        <h2>Bild konvertieren</h2>
+
+    <!-- TOOL 2 -->
+
+    <div class="tool-card">
+
+        <div class="tool-icon">
+            🔄
+        </div>
+
+        <h2>
+            Bild konvertieren
+        </h2>
 
         <p>
-            Konvertiere Bilder zwischen verschiedenen Formaten.
+            Konvertiere Bilder zwischen JPG, PNG und WebP.
         </p>
 
-        <a href="#" class="button">
-            Bald verfügbar
+        <a
+            href="convert.html"
+            class="button"
+        >
+            Jetzt testen
         </a>
+
     </div>
 
-    <!-- WÖRTER ZÄHLEN -->
-    <div class="tool-card">
-        <div class="tool-icon">🔢</div>
 
-        <h2>Wörter zählen</h2>
+
+    <!-- TOOL 3 -->
+
+    <div class="tool-card">
+
+        <div class="tool-icon">
+            🔢
+        </div>
+
+        <h2>
+            Wörter zählen
+        </h2>
 
         <p>
             Zähle Wörter, Zeichen und Sätze in deinem Text.
         </p>
 
-        <a href="#" class="button">
+        <a
+            href="#"
+            class="button"
+        >
             Bald verfügbar
         </a>
+
     </div>
 
-    <!-- QR CODE -->
-    <div class="tool-card">
-        <div class="tool-icon">🔗</div>
 
-        <h2>QR-Code Generator</h2>
+
+    <!-- TOOL 4 -->
+
+    <div class="tool-card">
+
+        <div class="tool-icon">
+            🔗
+        </div>
+
+        <h2>
+            QR-Code Generator
+        </h2>
 
         <p>
             Erstelle kostenlos einen QR-Code.
         </p>
 
-        <a href="#" class="button">
+        <a
+            href="#"
+            class="button"
+        >
             Bald verfügbar
         </a>
+
     </div>
+
 
 </section>
 
+
+
 <footer>
+
     © 2026 QuickTools
+
 </footer>
 
+
 </body>
+
 </html>
