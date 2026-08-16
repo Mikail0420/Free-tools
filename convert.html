@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>QuickTools – Kostenlose Online-Tools</title>
-    <meta name="description" content="Kostenlose und einfache Online-Tools für Bilder, Dateien und mehr.">
+    <title>Bild konvertieren – QuickTools</title>
+
+    <meta
+        name="description"
+        content="Konvertiere JPG, PNG und WebP kostenlos mit QuickTools."
+    >
 
     <style>
         * {
@@ -21,107 +25,173 @@
         }
 
         header {
-            background: #ffffff;
+            background: white;
             border-bottom: 1px solid #e5e7eb;
             padding: 20px;
         }
 
         nav {
-            max-width: 1100px;
+            max-width: 900px;
             margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
         .logo {
             font-size: 24px;
             font-weight: 800;
+            text-decoration: none;
+            color: #111827;
         }
 
         .logo span {
             color: #2563eb;
         }
 
-        .hero {
-            max-width: 900px;
-            margin: 80px auto 50px;
-            text-align: center;
+        main {
+            max-width: 800px;
+            margin: 60px auto;
             padding: 20px;
         }
 
-        .hero h1 {
-            font-size: 52px;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 19px;
-            color: #6b7280;
-            margin-bottom: 35px;
-        }
-
-        .tools {
-            max-width: 1100px;
-            margin: auto;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .tool-card {
-            background: white;
-            padding: 30px;
-            border-radius: 16px;
-            border: 1px solid #e5e7eb;
-            transition: 0.2s;
-        }
-
-        .tool-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-
-        .tool-icon {
-            font-size: 35px;
-            margin-bottom: 15px;
-        }
-
-        .tool-card h2 {
-            margin-bottom: 10px;
-            font-size: 21px;
-        }
-
-        .tool-card p {
-            color: #6b7280;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-
-        .button {
+        .back {
+            color: #2563eb;
+            text-decoration: none;
             display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        .box {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 18px;
+            padding: 35px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .description {
+            color: #6b7280;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .upload {
+            border: 2px dashed #cbd5e1;
+            border-radius: 14px;
+            padding: 40px 20px;
+            margin-bottom: 25px;
+        }
+
+        input[type="file"] {
+            margin: 15px 0;
+            max-width: 100%;
+        }
+
+        .format-section {
+            margin: 25px 0;
+        }
+
+        .format-section label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        select {
+            width: 100%;
+            max-width: 300px;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 9px;
+            font-size: 16px;
+            background: white;
+        }
+
+        button {
             background: #2563eb;
             color: white;
-            padding: 11px 18px;
+            border: none;
+            padding: 13px 24px;
             border-radius: 9px;
-            text-decoration: none;
-            font-weight: 600;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
         }
 
-        .button:hover {
+        button:hover {
             background: #1d4ed8;
+        }
+
+        button:disabled {
+            background: #94a3b8;
+            cursor: not-allowed;
+        }
+
+        #result {
+            display: none;
+            margin-top: 30px;
+            padding: 25px;
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+
+        #preview {
+            max-width: 100%;
+            max-height: 350px;
+            margin: 20px auto;
+            display: block;
+            border-radius: 10px;
+        }
+
+        .download {
+            display: inline-block;
+            background: #16a34a;
+            color: white;
+            padding: 13px 24px;
+            border-radius: 9px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .download:hover {
+            background: #15803d;
+        }
+
+        .info {
+            margin-top: 15px;
+            color: #6b7280;
+            line-height: 1.5;
+        }
+
+        .privacy {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.5;
         }
 
         footer {
             text-align: center;
-            padding: 60px 20px 30px;
+            padding: 30px;
             color: #6b7280;
         }
 
         @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 38px;
+
+            main {
+                margin: 30px auto;
+            }
+
+            .box {
+                padding: 25px 18px;
+            }
+
+            h1 {
+                font-size: 30px;
             }
         }
     </style>
@@ -130,137 +200,434 @@
 <body>
 
 <header>
+
     <nav>
-        <div class="logo">
+
+        <a href="index.html" class="logo">
             Quick<span>Tools</span>
-        </div>
+        </a>
+
     </nav>
+
 </header>
 
-<section class="hero">
 
-    <h1>
-        Simple tools.<br>
-        Completely free.
-    </h1>
+<main>
 
-    <p>
-        Praktische Online-Tools, die schnell und einfach funktionieren.
-        Keine komplizierte Software nötig.
-    </p>
-
-</section>
-
-<section class="tools">
-
-    <!-- BILD KOMPRESSOR -->
-
-    <div class="tool-card">
-
-        <div class="tool-icon">
-            🖼️
-        </div>
-
-        <h2>
-            Bild komprimieren
-        </h2>
-
-        <p>
-            Verkleinere deine Bilder schnell und einfach.
-        </p>
-
-        <a
-            href="compress.html"
-            class="button"
-        >
-            Jetzt testen
-        </a>
-
-    </div>
+    <a href="index.html" class="back">
+        ← Zurück zu QuickTools
+    </a>
 
 
-    <!-- BILD KONVERTER -->
+    <div class="box">
 
-    <div class="tool-card">
-
-        <div class="tool-icon">
-            🔄
-        </div>
-
-        <h2>
+        <h1>
             Bild konvertieren
-        </h2>
+        </h1>
 
-        <p>
-            Konvertiere Bilder zwischen JPG, PNG und WebP.
+        <p class="description">
+            Konvertiere deine Bilder kostenlos zwischen
+            JPG, PNG und WebP.
         </p>
 
-        <a
-            href="convert.html"
-            class="button"
-        >
-            Jetzt testen
-        </a>
 
-    </div>
+        <div class="upload">
 
+            <strong>
+                Bild auswählen
+            </strong>
 
-    <!-- WÖRTER ZÄHLEN -->
+            <br>
 
-    <div class="tool-card">
+            <input
+                type="file"
+                id="fileInput"
+                accept="image/jpeg,image/png,image/webp"
+            >
 
-        <div class="tool-icon">
-            🔢
         </div>
 
-        <h2>
-            Wörter zählen
-        </h2>
 
-        <p>
-            Zähle Wörter, Zeichen und Sätze in deinem Text.
-        </p>
+        <div class="format-section">
 
-        <a
-            href="#"
-            class="button"
-        >
-            Bald verfügbar
-        </a>
+            <label for="format">
+                Zielformat auswählen:
+            </label>
 
-    </div>
+            <select id="format">
 
+                <option value="image/jpeg">
+                    JPG
+                </option>
 
-    <!-- QR CODE -->
+                <option value="image/png">
+                    PNG
+                </option>
 
-    <div class="tool-card">
+                <option value="image/webp">
+                    WebP
+                </option>
 
-        <div class="tool-icon">
-            🔗
+            </select>
+
         </div>
 
-        <h2>
-            QR-Code Generator
-        </h2>
 
-        <p>
-            Erstelle kostenlos einen QR-Code.
-        </p>
-
-        <a
-            href="#"
-            class="button"
+        <button
+            id="convertButton"
+            onclick="convertImage()"
         >
-            Bald verfügbar
-        </a>
+            Bild konvertieren
+        </button>
+
+
+        <div id="result">
+
+            <h2>
+                Fertig! 🎉
+            </h2>
+
+
+            <img
+                id="preview"
+                alt="Konvertiertes Bild"
+            >
+
+
+            <p
+                id="info"
+                class="info"
+            ></p>
+
+
+            <a
+                id="download"
+                class="download"
+            >
+                Bild herunterladen
+            </a>
+
+        </div>
+
+
+        <p class="privacy">
+            🔒 Deine Bilder werden direkt in deinem Browser verarbeitet
+            und nicht auf unseren Server hochgeladen.
+        </p>
 
     </div>
 
-</section>
+</main>
+
 
 <footer>
+
     © 2026 QuickTools
+
 </footer>
+
+
+<script>
+
+function convertImage() {
+
+    const fileInput =
+        document.getElementById("fileInput");
+
+    const button =
+        document.getElementById("convertButton");
+
+    const result =
+        document.getElementById("result");
+
+    const preview =
+        document.getElementById("preview");
+
+    const download =
+        document.getElementById("download");
+
+    const info =
+        document.getElementById("info");
+
+    const format =
+        document.getElementById("format").value;
+
+
+    /*
+     * Prüfen, ob eine Datei ausgewählt wurde.
+     */
+
+    if (!fileInput.files.length) {
+
+        alert("Bitte wähle zuerst ein Bild aus.");
+
+        return;
+    }
+
+
+    const file =
+        fileInput.files[0];
+
+
+    /*
+     * Button während der Verarbeitung deaktivieren.
+     */
+
+    button.disabled = true;
+
+    button.textContent = "Wird konvertiert...";
+
+
+    const reader =
+        new FileReader();
+
+
+    reader.onload = function(event) {
+
+        const img =
+            new Image();
+
+
+        img.onload = function() {
+
+            const canvas =
+                document.createElement("canvas");
+
+
+            const ctx =
+                canvas.getContext("2d");
+
+
+            canvas.width =
+                img.width;
+
+            canvas.height =
+                img.height;
+
+
+            /*
+             * JPG unterstützt keine Transparenz.
+             * Deshalb bekommt ein transparentes Bild
+             * beim Umwandeln zu JPG einen weißen Hintergrund.
+             */
+
+            if (format === "image/jpeg") {
+
+                ctx.fillStyle = "#ffffff";
+
+                ctx.fillRect(
+                    0,
+                    0,
+                    canvas.width,
+                    canvas.height
+                );
+            }
+
+
+            /*
+             * Bild auf das Canvas zeichnen.
+             */
+
+            ctx.drawImage(
+                img,
+                0,
+                0
+            );
+
+
+            /*
+             * Canvas in das gewünschte Format umwandeln.
+             */
+
+            canvas.toBlob(
+
+                function(blob) {
+
+                    if (!blob) {
+
+                        alert(
+                            "Die Konvertierung ist fehlgeschlagen."
+                        );
+
+                        button.disabled = false;
+
+                        button.textContent =
+                            "Bild konvertieren";
+
+                        return;
+                    }
+
+
+                    /*
+                     * Temporäre URL für die neue Datei erstellen.
+                     */
+
+                    const url =
+                        URL.createObjectURL(blob);
+
+
+                    /*
+                     * Vorschau anzeigen.
+                     */
+
+                    preview.src =
+                        url;
+
+
+                    /*
+                     * Dateiendung bestimmen.
+                     */
+
+                    let extension;
+
+
+                    if (format === "image/jpeg") {
+
+                        extension = "jpg";
+
+                    } else if (format === "image/png") {
+
+                        extension = "png";
+
+                    } else {
+
+                        extension = "webp";
+                    }
+
+
+                    /*
+                     * Download vorbereiten.
+                     */
+
+                    download.href =
+                        url;
+
+                    download.download =
+                        "quicktools-converted." +
+                        extension;
+
+
+                    /*
+                     * Informationen anzeigen.
+                     */
+
+                    info.textContent =
+                        "Original: " +
+                        formatBytes(file.size) +
+                        " → Neue Datei: " +
+                        formatBytes(blob.size);
+
+
+                    /*
+                     * Ergebnis anzeigen.
+                     */
+
+                    result.style.display =
+                        "block";
+
+
+                    /*
+                     * Button zurücksetzen.
+                     */
+
+                    button.disabled = false;
+
+                    button.textContent =
+                        "Bild konvertieren";
+
+                },
+
+                format,
+
+                /*
+                 * JPG/WebP Qualität.
+                 * PNG ignoriert diesen Wert.
+                 */
+
+                0.9
+
+            );
+
+        };
+
+
+        img.onerror = function() {
+
+            alert(
+                "Dieses Bild konnte nicht verarbeitet werden."
+            );
+
+            button.disabled = false;
+
+            button.textContent =
+                "Bild konvertieren";
+        };
+
+
+        img.src =
+            event.target.result;
+
+    };
+
+
+    reader.onerror = function() {
+
+        alert(
+            "Die Datei konnte nicht gelesen werden."
+        );
+
+        button.disabled = false;
+
+        button.textContent =
+            "Bild konvertieren";
+    };
+
+
+    reader.readAsDataURL(file);
+
+}
+
+
+/*
+ * Dateigröße lesbar darstellen.
+ */
+
+function formatBytes(bytes) {
+
+    if (bytes === 0) {
+
+        return "0 Bytes";
+    }
+
+
+    const sizes = [
+        "Bytes",
+        "KB",
+        "MB",
+        "GB"
+    ];
+
+
+    const i =
+        Math.floor(
+            Math.log(bytes) /
+            Math.log(1024)
+        );
+
+
+    return (
+        Math.round(
+            bytes /
+            Math.pow(1024, i) *
+            100
+        ) / 100
+        +
+        " " +
+        sizes[i]
+    );
+}
+
+</script>
 
 </body>
 </html>
